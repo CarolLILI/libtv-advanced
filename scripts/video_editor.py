@@ -21,9 +21,36 @@ except ImportError:
     sys.exit(1)
 
 
+def _detect_font():
+    """检测系统可用的中文字体"""
+    candidates = [
+        # macOS
+        "/System/Library/Fonts/PingFang.ttc",
+        "/System/Library/Fonts/STHeiti Medium.ttc",
+        "/System/Library/Fonts/Hiragino Sans GB.ttc",
+        "/Library/Fonts/Arial Unicode.ttf",
+        # Linux
+        "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
+        "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+        "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",
+        # Windows
+        "C:/Windows/Fonts/msyh.ttc",
+        "C:/Windows/Fonts/simsun.ttc",
+    ]
+    for font_path in candidates:
+        if os.path.exists(font_path):
+            return font_path
+    # 回退到英文字体
+    return "Arial-Bold"
+
+
+# 全局默认字体
+DEFAULT_FONT = _detect_font()
+
+
 class VideoEditor:
     """视频编辑器"""
-    
+
     def __init__(self, output_dir="./output"):
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
@@ -92,7 +119,7 @@ class VideoEditor:
                 color=sub.get("color", "white"),
                 stroke_color=sub.get("stroke_color", "black"),
                 stroke_width=sub.get("stroke_width", 2),
-                font=sub.get("font", "Arial-Bold")
+                font=sub.get("font", DEFAULT_FONT)
             )
             .set_start(sub["start"])
             .set_duration(sub["duration"])
