@@ -277,14 +277,21 @@ See `scripts/config_example.json` for advanced editing options including:
 
 MIT License - See [LICENSE](LICENSE)
 
+## Acknowledgements / 致谢
+
+本项目基于 [libtv-labs/libtv-skills](https://github.com/libtv-labs/libtv-skills) 优化而来。感谢原作者提供的高质量 LibTV Skill 实现，包括完善的 API 封装、轮询策略和"信使原则"等核心设计理念。本仓库在此基础上增加了视频剪辑流水线、并行下载、中文字体检测等增强功能。
+
+This project is built upon [libtv-labs/libtv-skills](https://github.com/libtv-labs/libtv-skills). Special thanks to the original authors for the well-designed LibTV Skill implementation, including the clean API wrappers, polling strategy, and the "messenger principle". This repo extends it with a video editing pipeline, parallel downloads, and CJK font detection.
+
 ## Credits
 
+- [libtv-labs/libtv-skills](https://github.com/libtv-labs/libtv-skills) - Original LibTV Skill (the foundation of this project)
 - [LibTV](https://www.liblib.tv) - AI generation platform
 - [OpenClaw](https://github.com/anthropics/openclaw) - Agent framework
 - [MoviePy](https://github.com/Zulko/moviepy) - Video editing library
 
 ## Links
 
-- Official LibTV Skill: https://github.com/libtv-labs/libtv-skills
+- Original LibTV Skill: https://github.com/libtv-labs/libtv-skills
 - LibTV: https://www.liblib.tv
 - OpenClaw: https://github.com/anthropics/openclaw
