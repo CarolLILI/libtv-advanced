@@ -1,0 +1,26 @@
+{
+  "transition": "fade",
+  "transition_duration": 1.5,
+  "style": "cinematic",
+  "bgm": "./assets/background_music.mp3",
+  "bgm_volume": 0.25,
+  "subtitles": [
+    {
+      "text": "第一章",
+      "start": 0,
+      "duration": 3,
+      "position": "center",
+      "fontsize": 80,
+      "color": "white",
+      "stroke_color": "black",
+      "stroke_width": 3
+    },
+    {
+      "text": "故事开始...",
+      "start": 4,
+      "duration": 3,
+      "position": "bottom",
+      "fontsize": 50
+    }
+  ]
+}
